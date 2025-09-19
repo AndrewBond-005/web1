@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>1-я лаба по вебу</title>
+		<meta name="author" content="Andrei Bondarenko">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<script defer src="index.js"></script>
+		<style>
+		html{
+			
+			background-color: rgb(255, 255, 255);
+			cursor: url('rainbow.png'), auto;
+			background-image: url("фон4.png");
+			background-size: 70px 70px;
+		}
+	
+		header{
+			font-family:serif;
+			font-size:25px;
+			color:black;
+		}
+		#main{
+			height:80%; 
+			width: 100%; 
+			table-layout: fixed;
+		}
+		a:hover{
+			color:#ffffff00 ;
+			visibility:none;	
+			cursor:default;
+		}
+		
+		#inputcell{
+			position: relative;
+		}
+		#inputForm {
+            top: 120px;
+            padding: 10px;
+        }
+		/* каскадность */
+		#inputcell > form{
+			position: absolute;
+			margin-top: -100px;
+		}
+		#resultTable :is(td,th,thead){
+		 	border: 2px solid black;
+		}
+		button[type="button"]{/*атрибутов*/
+			background-color: rgb(255, 86, 86);
+		}
+		button[type="button"]:hover{/*атрибутов*/
+			background-color: rgb(255, 0, 0);
+		}
+		#errorMessage{
+			font-size: 18px;
+			color:red; 
+			display:none;
+			position: sticky;
+            top: 140px;
+            padding: 10px;
+		}
+		#errorCell{
+		 	border: 4px solid rgb(194, 0, 0);
+			display:none;
+		}
+		#imagecell{
+			overflow: hidden; 
+			display: flex; 
+			justify-content: center; 
+			align-items: center;
+		}
+		#resultTable {/*идентификаторов*/
+		  	width: 100%;
+			border-collapse: collapse; 
+			max-height: 75vh; 
+            overflow-y: auto; 
+            display: block;
+		}
+		
+		#resultTable > thead {/*дочерних*/
+		  	background-color: #d2b18c;
+		}
+		#resultTable td {/*потомств*/
+			padding: 10px;
+			text-align: center;
+			background-color: #f9e0be;
+		}
+		.yes {
+    		background-color: #d4edda !important;
+   			color: #155724 !important;
+		}
+
+		.no {
+    		background-color: #f8d7da !important;
+    		color: #721c24 !important;
+		}
+		#y{
+			width:40%;
+		}
+		/*
+		При работе с CSS должно быть продемонстрировано использование селекторов 
+		дочерних элементов, 
+		потомств, 
+		идентификаторов, 
+		атрибутов 
+		наследование
+		каскадирование.
+
+		#resultTable tr:nth-child(3n+2){
+			background-color:rgba(255, 255, 255, 0.401);
+		}
+		#resultTable tr:nth-child(3n){
+			background-color:rgba(0, 0, 255, 0.405);
+		}
+		#resultTable tr:nth-child(3n+1){
+			background-color:rgba(255, 0, 0, 0.4);
+		}
+		*/
+		
+		</style>
+	</head>
+	<body>
+		<table id="main">
+			<caption><b><h1>Лабораторная работа №1 по веб-программированию</h1></b></caption>
+			 <colgroup>
+			<col style="width:30%;">
+			<col style="width:30%;">
+			<col style="width:40%;">
+			 </colgroup>
+			<thead >
+				<tr>
+				<th colspan="3"><header>Выполнил: Бондаренко Андрей Владимирович P3215	  Вариант: 465259 </header></th>
+				</tr>
+			</thead>
+			<tr>
+				<td id="inputcell">
+					<form id="inputForm" method="get" >
+						<p>
+						<label for="x">X:</label>
+						<select id="x" name="x" >
+							<option value="-2">-2</option>
+							<option value="-1.5">-1.5</option>
+							<option value="-1">-1</option>
+							<option value="-0.5">-0.5</option>
+							<option value="0">0</option>
+							<option value="0.5">0.5</option>
+							<option value="1">1</option>
+							<option value="1.5">1.5</option>
+							<option value="2">2</option>
+						</select>
+						<label for="y">Y:</label>
+						<input type="text" id="y" name="y" placeholder=" число от -3 до 3";>
+						<label for="r">R:</label>
+						<select id="r" name="r">
+							<option value="1">1</option>
+							<option value="1.5">1.5</option>
+							<option value="2">2</option>
+							<option value="2.5">2.5</option>
+							<option value="3">3</option>
+						</select>
+						</p>
+						<p>
+						<input type="submit" value="Отправить" />
+						<button type="button", id="clearButton" >Удалить таблицу</button>
+						</p>
+						<table id="errorTable">
+							<tr>
+								<td id="errorCell"><strong id="errorMessage"></strong></td>
+							</tr>
+						</table>
+					</form>	
+				</td>
+				<td  id="imagecell"><img src="область.png"></td>
+				<td>
+					<table id="resultTable">
+					<thead>
+						<tr>
+						<th>X</th>
+						<th>Y</th>
+						<th>R</th>
+						<th>текущее время</th>
+						<th>время работы в сек.</th>
+						<th>результат</th>
+						</tr>
+					</thead>
+					
+					</table>
+				
+				
+				</td>
+			</tr>
+			<tfoot>
+				<tr>
+				<th colspan="3">Copyright GOYDA© 2025. <a href="">github</a></th>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>
