@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>1-я лаба по вебу</title>
+		<meta name="author" content="Andrei Bondarenko">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<!--<script defer src="js/index.js"></script>-->
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<table id="main">
+			<caption><b><h1>Лабораторная работа №1 по веб-программированию</h1></b></caption>
+			 <colgroup>
+			<col id="col1">
+			<col id="col2">
+			<col id="col3">
+			 </colgroup>
+			<thead >
+				<tr>
+				<th colspan="3"><header>Выполнил: Бондаренко Андрей Владимирович P3215	  Вариант: 465259</header><button id="themeTag">🌙</button></th>
+				</tr>
+			</thead>
+			<tr>
+				<td id="inputcell">
+					<form id="inputForm" method="get" >
+						<p>
+						<label for="x"><b>X:</b></label>
+						<select id="x" name="x" >
+							<option value="-2">-2</option>
+							<option value="-1.5">-1.5</option>
+							<option value="-1">-1</option>
+							<option value="-0.5">-0.5</option>
+							<option value="0">0</option>
+							<option value="0.5">0.5</option>
+							<option value="1">1</option>
+							<option value="1.5">1.5</option>
+							<option value="2">2</option>
+						</select>
+						<label for="y"><b>Y:</b></label>
+						<input type="text" id="y" name="y" placeholder=" число от -3 до 3";>
+						<label for="r"><b>R:</b></label>
+						<select id="r" name="r">
+							<option value="1">1</option>
+							<option value="1.5">1.5</option>
+							<option value="2">2</option>
+							<option value="2.5">2.5</option>
+							<option value="3">3</option>
+						</select>
+						</p>
+						<p>
+						<input type="submit" value="Отправить" />
+						<button type="button", id="clearButton" >Удалить таблицу</button>
+						</p>
+						<table id="errorTable">
+							<tr>
+								<td id="errorCell"><strong id="errorMessage"></strong></td>
+							</tr>
+						</table>
+					</form>	
+				</td>
+				<td  id="imagecell"><img src="area.png"></td>
+				<td>
+					<table id="resultTable">
+					<thead>
+						<tr>
+						<th>X</th>
+						<th>Y</th>
+						<th>R</th>
+						<th>текущее время</th>
+						<th>время работы в мс.</th>
+						<th>результат</th>
+						</tr>
+					</thead>
+					
+					</table>
+				
+				
+				</td>
+			</tr>
+			<tfoot>
+				<tr>
+				<th colspan="3">Copyright GOYDA© 2025. <a href="https://github.com/AndrewBond-005/web1">github</a></th>
+				</tr>
+			</tfoot>
+		</table>
+		<script type="module" src="main.js"></script>
+	</body>
+</html>
