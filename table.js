@@ -1,8 +1,12 @@
 const table = document.getElementById("resultTable");
 export function renderTable(results) {
-    clearTable();
+    let k=-1;
+    if(!results.length){
+        k=1;
+        results=[results];
+    }
     results.forEach((result) => {
-        const newRow = table.insertRow();
+        const newRow = table.insertRow(k);
         const cellsData = [
             result.x?.toString() ?? '',
             result.y?.toString() ?? '',
@@ -36,4 +40,5 @@ export function saveResults(answer, prevResults) {
         result: answer.result
     });
     localStorage.setItem('resultRow', JSON.stringify(prevResults));
+
 }
