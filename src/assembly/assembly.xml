@@ -1,0 +1,29 @@
+<assembly>
+    <id>jar-with-dependencies</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.fastcgi:fcgi</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <unpack>true</unpack>
+            <scope>system</scope>
+        </dependencySet>
+    </dependencySets>
+    <files>
+        <file>
+            <source>${project.build.outputDirectory}/Main.class</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+    </files>
+</assembly>
